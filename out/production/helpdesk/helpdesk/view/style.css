@@ -1,11 +1,11 @@
 .root {
-    -fx-background-color: blue;
+    -fx-background-color: #EDEAE5;
 }
 
 .button {
-    -fx-background-color: green;
+    -fx-background-color: #FCE181;
 }
 
 .text-field {
-    -fx-background-color: yellow;
+    -fx-background-color: #FEF9C7;
 }
