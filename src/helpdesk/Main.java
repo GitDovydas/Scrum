@@ -13,12 +13,11 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         // Nurodomo, kur yra vaizdas (kur yra grafinė vartotojo sąsaja, t.y. forma į kurią vesime duomenis
         // Sukuriama scena kuri yra konfiguruojama
-        Parent root = FXMLLoader.load(getClass().getResource("view/login2.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("view/login.fxml"));
         // Šiuo metu rodomoas dialogas. Nustatomas jo antraštė
         primaryStage.setTitle("Login");
         // Nustatomas dialogo plotas ir ilgis, ir priskiriama dialogui grafinė artotojo sąsaja (Forma), tai yra užkraunama vartojo vaizdas
         primaryStage.setScene(new Scene(root, 550, 450));
-//        primaryStage.setScene(loginScene);
         // Reikalinga, kad rodytų dialogą
         primaryStage.show();
     }
