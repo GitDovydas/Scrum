@@ -1,5 +1,8 @@
 package helpdesk.controller;
 
+import helpdesk.model.Password;
+import helpdesk.model.User;
+import helpdesk.model.UserDAO;
 import helpdesk.utils.Validation;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -65,9 +68,21 @@ public class RegisterController {
                 }
                 else{
                     // Dashboard kontrolerį yra funkcija kuri gražina vartotoja į Login ekraną
+                try{
+
+                } catch (){
+
+                }
+
+                    String hashedPassword = Password.hashPasswWord(password1.getText());
+                    User user = new User(username.getText(), hashedPassword, email.getText());
+                    UserDAO.create(user);
+
                     DashboardController dashboardController = new DashboardController();
                     dashboardController.goToLogin(actionEvent);
                 }
+
+
 
 
 

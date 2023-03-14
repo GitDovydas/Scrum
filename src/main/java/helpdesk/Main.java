@@ -1,5 +1,7 @@
 package helpdesk;
 
+import helpdesk.model.User;
+import helpdesk.model.UserDAO;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -25,5 +27,9 @@ public class Main extends Application {
     public static void main(String[] args) {
         // Paleidžiamas metodas, kuris startuos GUI aplikaciją (Start metodas)
         launch(args);
+
+        User user = new User();
+        UserDAO.create(user);
+
     }
 }
