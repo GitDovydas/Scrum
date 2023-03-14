@@ -49,7 +49,7 @@ public class LoginController {
         // Mes esame kontrolerio aplanke, bet vaizdo čia nėra, todėl mes turime pakilti vienu aplanku į viršų (../)
         try {
             // Sukuriamas dashboard langas
-            Parent root = FXMLLoader.load(getClass().getResource("../view/register.fxml"));
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("view/register.fxml"));
             Stage stage = new Stage();
             stage.setTitle(("Register"));
             stage.setScene(new Scene(root, 550, 450));
@@ -65,7 +65,7 @@ public class LoginController {
         // Mes esame kontrolerio aplanke, bet vaizdo čia nėra, todėl mes turime pakilti vienu aplanku į viršų (../)
         try {
             // Sukuriamas dashboard langas
-            Parent root = FXMLLoader.load(getClass().getResource("../view/dashboard.fxml"));
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("view/dashboard.fxml"));
             Stage stage = new Stage();
             stage.setTitle(("Dashboard"));
             stage.setScene(new Scene(root, 800, 700));
