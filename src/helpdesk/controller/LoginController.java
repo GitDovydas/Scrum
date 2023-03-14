@@ -20,11 +20,14 @@ public class LoginController {
     @FXML
     Button login_button;
     @FXML
+    Button button_register;
+    @FXML
     TextField username;
     @FXML
     PasswordField password;
     @FXML
     Label login_error;
+
     public void onLoginButtonClick(ActionEvent actionEvent) {
         // Aprašomas mygtuko paspaudimas
         login_button.setOnAction(new EventHandler<ActionEvent>() {
@@ -34,7 +37,7 @@ public class LoginController {
                 // Atliekama vartotojo įvestų duomenų validacija
                 if (Validation.isValidUsername(username.getText()) && Validation.isValidPassword(password.getText())) {
                     // Jei gerai įvesti duomenys reikės pereiti iš login ekrano į pagrindinį langą
-                    goToDaashboard(event);
+                    goToDashboard(event);
                 } else {
                     login_error.setText("Wrong username or password");
                 }
@@ -42,7 +45,23 @@ public class LoginController {
         });
     }
 
-    public void goToDaashboard(ActionEvent actionEvent) {
+    public void onRegisterButtonClick(ActionEvent actionEvent) {
+        // Mes esame kontrolerio aplanke, bet vaizdo čia nėra, todėl mes turime pakilti vienu aplanku į viršų (../)
+        try {
+            // Sukuriamas dashboard langas
+            Parent root = FXMLLoader.load(getClass().getResource("../view/register.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle(("Register"));
+            stage.setScene(new Scene(root, 550, 450));
+            stage.show();
+            // Paslepiamas prisijungimo langas
+            ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void goToDashboard(ActionEvent actionEvent) {
         // Mes esame kontrolerio aplanke, bet vaizdo čia nėra, todėl mes turime pakilti vienu aplanku į viršų (../)
         try {
             // Sukuriamas dashboard langas

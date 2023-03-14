@@ -3,34 +3,47 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400" prefWidth="500.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="helpdesk.controller.LoginController">
-   <center>
-      <GridPane maxHeight="300" maxWidth="400" BorderPane.alignment="CENTER">
-         <GridPane.margin>
-            <Insets topRightBottomLeft="20" />
-         </GridPane.margin>
-         <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-         </columnConstraints>
-         <rowConstraints>
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-         </rowConstraints>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="helpdesk.controller.LoginController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="Infinity" text="Login" VBox.vgrow="ALWAYS">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="50.0" top="50.0" />
+         </VBox.margin></Label>
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
          <children>
-            <Label text="Helpdesk" GridPane.columnSpan="3" GridPane.halignment="CENTER" />
-            <Label text="Username" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-            <Label text="Password" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-            <TextField fx:id="username" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
-            <PasswordField fx:id="password" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2" />
-            <Label fx:id="login_error" alignment="CENTER" textFill="RED" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-            <Button fx:id="login_button" mnemonicParsing="false" onAction="#onLoginButtonClick" text="Login" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+            <Label alignment="CENTER_RIGHT" minWidth="100.0" text="Username">
+               <HBox.margin>
+                  <Insets right="30.0" />
+               </HBox.margin></Label>
+            <TextField fx:id="username" />
          </children>
-      </GridPane>
-   </center>
-</BorderPane>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="87.0" prefHeight="50.0" prefWidth="200.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" minWidth="100.0" text="Password">
+               <HBox.margin>
+                  <Insets right="30.0" />
+               </HBox.margin>
+            </Label>
+            <PasswordField fx:id="password" />
+         </children>
+      </HBox>
+      <Label fx:id="login_error" alignment="CENTER" minHeight="50.0" prefWidth="Infinity" textFill="RED" />
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="button_register" minWidth="70.0" mnemonicParsing="false" onAction="#onRegisterButtonClick" text="Register">
+               <HBox.margin>
+                  <Insets right="50.0" />
+               </HBox.margin></Button>
+            <Button fx:id="login_button" minWidth="70.0" mnemonicParsing="false" onAction="#onLoginButtonClick" text="Login">
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin></Button>
+         </children></HBox>
+   </children>
+</VBox>

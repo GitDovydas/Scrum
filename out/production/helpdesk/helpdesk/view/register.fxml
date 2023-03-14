@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="helpdesk.controller.RegisterController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="Infinity" text="Register" VBox.vgrow="ALWAYS">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="20.0" top="50.0" />
+         </VBox.margin>
+      </Label>
+      <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" minWidth="100.0" text="Username">
+               <HBox.margin>
+                  <Insets right="30.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="username" />
+         </children></HBox>
+      <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="100.0" text="Password">
+               <HBox.margin>
+                  <Insets right="30.0" />
+               </HBox.margin>
+            </Label>
+            <PasswordField fx:id="password1" />
+         </children></HBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="137.0" prefHeight="40.0" prefWidth="200.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="100.0" text="Repeat Password">
+               <HBox.margin>
+                  <Insets right="30.0" />
+               </HBox.margin>
+            </Label>
+            <PasswordField fx:id="password2" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="100.0" text="Email">
+               <HBox.margin>
+                  <Insets right="30.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="email" />
+         </children>
+      </HBox>
+      <Label fx:id="error_message" alignment="CENTER" contentDisplay="CENTER" minHeight="50.0" prefWidth="Infinity" VBox.vgrow="ALWAYS" />
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="button_cancel" alignment="CENTER" contentDisplay="CENTER" minWidth="70.0" mnemonicParsing="false" onAction="#onCancelButtonClick" text="Cancel" textOverrun="CENTER_ELLIPSIS">
+               <HBox.margin>
+                  <Insets right="50.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="button_register" alignment="CENTER" contentDisplay="CENTER" minWidth="70.0" mnemonicParsing="false" onAction="#onRegisterButtonClick" text="Register" textOverrun="CENTER_ELLIPSIS">
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>

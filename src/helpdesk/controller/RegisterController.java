@@ -7,19 +7,28 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class DashboardController {
+public class RegisterController {
     @FXML
-    Button return_button;
-    // Jei nerodo ikonėlių prie FXML elementų patikrinti ar FMLe yra nurodytas kontroleris
+    TextField username;
+    @FXML
+    PasswordField password1;
+    @FXML
+    PasswordField password2;
+    @FXML
+    Label error_message;
+    @FXML
+    Button button_cancel;
+    @FXML
+    Button button_register;
 
-    /**
-     * Funkcija grąžinantį vartotoją į login langą
-     */
-    public void goToLogin(ActionEvent actionEvent) {
+    public void onCancelButtonClick(ActionEvent actionEvent) {
         try {
             // Sukuriamas dashboard langas
             Parent root = FXMLLoader.load(getClass().getResource("../view/login.fxml"));
@@ -32,5 +41,9 @@ public class DashboardController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    };
+    }
+
+    public void onRegisterButtonClick(ActionEvent actionEvent) {
+        
+    }
 }
